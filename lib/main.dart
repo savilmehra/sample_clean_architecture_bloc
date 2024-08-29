@@ -27,8 +27,8 @@ Future<void> main() async {
     storageBucket: 'sampleapp-a672e.appspot.com',
   ));
 
-  FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
-
+ /* FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
+*/
   runApp(const MyApp());
 }
 
