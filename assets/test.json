@@ -1,0 +1,135 @@
+{
+  "shirts": [
+    {
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sampleapp-a672e.appspot.com/o/SFJEAN0234-1-removebg-preview.png?alt=media&token=d5273cc4-0fd4-43bc-86a1-d22179b9881b",
+      "price": 200,
+      "discountedPrice": 160,
+      "currency": "IND",
+      "discount": 20,
+      "brand": "Toodlegram",
+      "description": "Toodlegram formal Shirt for Men | Men's Solid Slim Fit Cotton Ice Blue Floral Shirt with Spread Collar & Full Sleeves | Wrinkle Free Mens Shirts, Regular Fit Stylish Mens Shirt 3XL to 7XL",
+      "product_details": {
+        "Material composition": " Polyester",
+        " Fit type": " Regular Fit",
+        " Sleeve type": "  Long Sleeve",
+        "Collar style": "  Regular Collar",
+        "Length": "Standard Length",
+        "Neck style": "Dom",
+        "Country of Origin": "India"
+      },
+      "Specification": [
+        {
+          "image": "https://firebasestorage.googleapis.com/v0/b/sampleapp-a672e.appspot.com/o/71QZ41xermL._SY879_.jpg?alt=media&token=3ca2dbfa-8366-4749-96dc-e25175f24a30",
+          "description": "Aditya Birla Fashion and Retail Limited, Aditya Birla Fashion And Retail,No.6, Belakhahalli,Retail Ltd),Arehalligudhahalli, Doddaballapura-561203,Doddaballapura,Karnataka,India"
+        },
+        {
+          "image": "https://firebasestorage.googleapis.com/v0/b/sampleapp-a672e.appspot.com/o/71SlwH5mnTL._SY879_.jpg?alt=media&token=c9a5a589-d9d6-40d0-a7b0-185078fbef3a",
+          "description": "Allen Solly is a brand inspiring the birth of an entirely new consumer class. Launched in India in 1993, its edgy positioning, smart communication and great fashion created the 'smart casuals' category in India. A quintessential British Brand, Allen Solly was launched in India by Madura Fashion & Lifestyle A Division of Aditya Birla Fashion & Retail."
+        },
+        {
+          "image": "https://firebasestorage.googleapis.com/v0/b/sampleapp-a672e.appspot.com/o/71o5BYfVwXL._SY879_.jpg?alt=media&token=8b3904ce-4927-4c62-9b1f-dfcea1b32382",
+          "description": "Allen Solly is in for western wear for women in India and redefines work wear in India with its 'Friday Dressing' fashion concept. It is the brand in the industry and is with men, women and kids presence across the country."
+        }
+      ]
+    },
+
+
+
+    {
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sampleapp-a672e.appspot.com/o/s2.png?alt=media&token=dad14993-1a5e-410d-8c79-28d0a57c0900",
+      "price": 300,
+      "currency": "IND",
+      "discountedPrice": 293,
+      "discount": 3,
+      "brand": "The Indian Garage Co",
+      "description": "The Indian Garage Co Men Slim Fit Solid Casual Over Shirt",
+      "product_details": {
+        "Material composition": " Polyester",
+        " Fit type": " Regular Fit",
+        " Sleeve type": "  Long Sleeve",
+        "Collar style": "  Regular Collar",
+        "Length": "Standard Length",
+        "Neck style": "Dom",
+        "Country of Origin": "India"
+      },
+      "Specification": [
+        {
+          "image": "https://firebasestorage.googleapis.com/v0/b/sampleapp-a672e.appspot.com/o/71QZ41xermL._SY879_.jpg?alt=media&token=3ca2dbfa-8366-4749-96dc-e25175f24a30",
+          "description": "Aditya Birla Fashion and Retail Limited, Aditya Birla Fashion And Retail,No.6, Belakhahalli,Retail Ltd),Arehalligudhahalli, Doddaballapura-561203,Doddaballapura,Karnataka,India"
+        },
+        {
+          "image": "https://firebasestorage.googleapis.com/v0/b/sampleapp-a672e.appspot.com/o/71SlwH5mnTL._SY879_.jpg?alt=media&token=c9a5a589-d9d6-40d0-a7b0-185078fbef3a",
+          "description": "Allen Solly is a brand inspiring the birth of an entirely new consumer class. Launched in India in 1993, its edgy positioning, smart communication and great fashion created the 'smart casuals' category in India. A quintessential British Brand, Allen Solly was launched in India by Madura Fashion & Lifestyle A Division of Aditya Birla Fashion & Retail."
+        },
+        {
+          "image": "https://firebasestorage.googleapis.com/v0/b/sampleapp-a672e.appspot.com/o/71o5BYfVwXL._SY879_.jpg?alt=media&token=8b3904ce-4927-4c62-9b1f-dfcea1b32382",
+          "description": "Allen Solly is in for western wear for women in India and redefines work wear in India with its 'Friday Dressing' fashion concept. It is the brand in the industry and is with men, women and kids presence across the country."
+        }
+      ]
+    },
+    {
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sampleapp-a672e.appspot.com/o/s3.png?alt=media&token=4b788530-97be-43fd-9790-bbd817947c7e",
+      "price": 4009,
+      "currency": "IND",
+      "discountedPrice": 551,
+      "discount": 88,
+      "brand": "Lymio Store",
+      "description": "Lymio Casual Shirt for Men|| Shirt for Men|| Men Stylish Shirt (Rib-Shirt)",
+      "product_details": {
+        "Material composition": " Polyester",
+        " Fit type": " Regular Fit",
+        " Sleeve type": "  Long Sleeve",
+        "Collar style": "  Regular Collar",
+        "Length": "Standard Length",
+        "Neck style": "Dom",
+        "Country of Origin": "India"
+      },
+      "Specification": [
+        {
+          "image": "https://firebasestorage.googleapis.com/v0/b/sampleapp-a672e.appspot.com/o/71QZ41xermL._SY879_.jpg?alt=media&token=3ca2dbfa-8366-4749-96dc-e25175f24a30",
+          "description": "Aditya Birla Fashion and Retail Limited, Aditya Birla Fashion And Retail,No.6, Belakhahalli,Retail Ltd),Arehalligudhahalli, Doddaballapura-561203,Doddaballapura,Karnataka,India"
+        },
+        {
+          "image": "https://firebasestorage.googleapis.com/v0/b/sampleapp-a672e.appspot.com/o/71SlwH5mnTL._SY879_.jpg?alt=media&token=c9a5a589-d9d6-40d0-a7b0-185078fbef3a",
+          "description": "Allen Solly is a brand inspiring the birth of an entirely new consumer class. Launched in India in 1993, its edgy positioning, smart communication and great fashion created the 'smart casuals' category in India. A quintessential British Brand, Allen Solly was launched in India by Madura Fashion & Lifestyle A Division of Aditya Birla Fashion & Retail."
+        },
+        {
+          "image": "https://firebasestorage.googleapis.com/v0/b/sampleapp-a672e.appspot.com/o/71o5BYfVwXL._SY879_.jpg?alt=media&token=8b3904ce-4927-4c62-9b1f-dfcea1b32382",
+          "description": "Allen Solly is in for western wear for women in India and redefines work wear in India with its 'Friday Dressing' fashion concept. It is the brand in the industry and is with men, women and kids presence across the country."
+        }
+      ]
+    },
+    {
+      "image_url": "https://firebasestorage.googleapis.com/v0/b/sampleapp-a672e.appspot.com/o/s4.png?alt=media&token=bd0a1387-30f1-42e5-a327-56921fca2e5d",
+      "price": 699,
+      "currency": "IND",
+      "discountedPrice": 490,
+      "discount": 30,
+      "brand": "IndoPrimo",
+      "description": "IndoPrimo Men's Cotton Casual Regular Fit Green Checks Shirt for Men Full Sleeves - Harley",
+      "product_details": {
+        "Material composition": " Polyester",
+        " Fit type": " Regular Fit",
+        " Sleeve type": "  Long Sleeve",
+        "Collar style": "  Regular Collar",
+        "Length": "Standard Length",
+        "Neck style": "Dom",
+        "Country of Origin": "India"
+      },
+      "Specification": [
+        {
+          "image": "https://firebasestorage.googleapis.com/v0/b/sampleapp-a672e.appspot.com/o/71QZ41xermL._SY879_.jpg?alt=media&token=3ca2dbfa-8366-4749-96dc-e25175f24a30",
+          "description": "Aditya Birla Fashion and Retail Limited, Aditya Birla Fashion And Retail,No.6, Belakhahalli,Retail Ltd),Arehalligudhahalli, Doddaballapura-561203,Doddaballapura,Karnataka,India"
+        },
+        {
+          "image": "https://firebasestorage.googleapis.com/v0/b/sampleapp-a672e.appspot.com/o/71SlwH5mnTL._SY879_.jpg?alt=media&token=c9a5a589-d9d6-40d0-a7b0-185078fbef3a",
+          "description": "Allen Solly is a brand inspiring the birth of an entirely new consumer class. Launched in India in 1993, its edgy positioning, smart communication and great fashion created the 'smart casuals' category in India. A quintessential British Brand, Allen Solly was launched in India by Madura Fashion & Lifestyle A Division of Aditya Birla Fashion & Retail."
+        },
+        {
+          "image": "https://firebasestorage.googleapis.com/v0/b/sampleapp-a672e.appspot.com/o/71o5BYfVwXL._SY879_.jpg?alt=media&token=8b3904ce-4927-4c62-9b1f-dfcea1b32382",
+          "description": "Allen Solly is in for western wear for women in India and redefines work wear in India with its 'Friday Dressing' fashion concept. It is the brand in the industry and is with men, women and kids presence across the country."
+        }
+      ]
+    }
+  ]
+}
