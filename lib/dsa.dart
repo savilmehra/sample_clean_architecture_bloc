@@ -1,5 +1,23 @@
-/*
 class DSA {
+  findDuplicates(List<int> list) {
+    Map<int, int> mp = {};
+
+
+
+    for (var item in list) {
+      if (mp.containsKey(item)) {
+        mp[item] = 2;
+      } else {
+        mp[item] = 1;
+      }
+    }
+    mp.forEach((key, value) {
+      if (value > 1) {
+        print(key);
+      }
+    });
+  }
+
   List<int> merged = [];
 
   List<int> mergeSort(List<int> array) {
@@ -8,7 +26,8 @@ class DSA {
       return array;
     }
     // split in the middle of the array
-    int splitIndex = array.length ~/ 2; // ~/2 means Divide, returning an integer result
+    int splitIndex =
+        array.length ~/ 2; // ~/2 means Divide, returning an integer result
 
     // recursively call merge sort on left and right array
     List<int> leftArray = mergeSort(array.sublist(0, splitIndex));
@@ -47,4 +66,3 @@ class DSA {
     return result;
   }
 }
-*/

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sampleapp/data/home_data/product_model.dart';
+import 'package:sampleapp/presentation/product_module/widgets/map_delivery_product.dart';
 import 'package:sampleapp/presentation/product_module/widgets/product_tile.dart';
 import 'package:sampleapp/presentation/product_module/widgets/product_tile_with_image.dart';
 
@@ -43,7 +44,7 @@ class _MainCollapsingToolbarState extends State<ProductDetailsPage>
             ]))
         .toList();
 
-    tabController = TabController(length: 2, vsync: this);
+    tabController = TabController(length: 3, vsync: this);
     tabController.addListener(() {
       setState(() {});
     });
@@ -54,7 +55,7 @@ class _MainCollapsingToolbarState extends State<ProductDetailsPage>
   Widget build(BuildContext context) {
     return Scaffold(
       body: DefaultTabController(
-        length: 2,
+        length: 3,
         child: NestedScrollView(
           headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
@@ -104,6 +105,7 @@ class _MainCollapsingToolbarState extends State<ProductDetailsPage>
                     tabs: const [
                       Tab(text: "Details"),
                       Tab(text: "Specifications"),
+                      Tab(text: "Delivery Area"),
                     ],
                   ),
                 ),
@@ -112,7 +114,10 @@ class _MainCollapsingToolbarState extends State<ProductDetailsPage>
             ];
           },
           body: Card(
-            child: TabBarView(controller: tabController, children: [
+            child: TabBarView(controller: tabController,
+                physics: const NeverScrollableScrollPhysics(),
+
+                children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TableWithTwoColumns(
@@ -137,6 +142,13 @@ class _MainCollapsingToolbarState extends State<ProductDetailsPage>
                                 "",
                       );
                     }),
+              ),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: MapDeliveryProduct(
+
+
+                ),
               ),
             ]),
           ),

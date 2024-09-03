@@ -90,8 +90,8 @@ class LoginScreen extends StatelessWidget {
                           padding: EdgeInsets.all(UiSizeConstants.size20),
                           child: SocialLoginButton(
                             onCLick: () {
-                              /*BlocProvider.of<LoginBloc>(context)
-                                  .signInWithGoogle();*/
+                              BlocProvider.of<LoginBloc>(context)
+                                  .signInWithGoogle();
                             },
                           ),
                         )

@@ -11,6 +11,7 @@ import '../common_widgets/clippers/clipper_background.dart';
 import '../common_widgets/crousels/home_crousel.dart';
 import '../common_widgets/shimmers/home_shimmer.dart';
 import '../product_module/product_gallery_page.dart';
+import '../product_module/widgets/map_delivery_product.dart';
 
 class HomePageScreen extends StatefulWidget {
   const HomePageScreen({super.key});
@@ -51,40 +52,49 @@ class HomePageScreenState extends State<HomePageScreen> {
             state.isLoading
                 ? ShimmerHome()
                 : SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20.0),
-                          child: SizedBox(
-                              height: 200,
-                              child: state.offers != null &&
-                                      state.offers!.isNotEmpty
-                                  ? HomeCarousel(
-                                      image: state.offers ?? [],
-                                    )
-                                  : SizedBox.shrink()),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              left: 16.0, right: 16.0, top: 20.0),
-                          child:
-                              HomePageSquareProduct(data: state.shirts ?? [],
-                              viewAllCLicked:(){
-
-                                BlocProvider.of<HomeBloc>(context).shirtViewAllClicked();
-                              }
-
-                              ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                              left: 16.0, right: 16.0, top: 20),
-                          child:
-                              HomePageCircularProduct(data: state.shoe ?? []),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 20.0),
+                    child: SizedBox(
+                        height: 200,
+                        child: state.offers != null &&
+                            state.offers!.isNotEmpty
+                            ? HomeCarousel(
+                          image: state.offers ?? [],
                         )
-                      ],
+                            : SizedBox.shrink()),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: 16.0, right: 16.0, top: 20.0),
+                    child:
+                    HomePageSquareProduct(data: state.shirts ?? [],
+                        viewAllCLicked: () {
+                          BlocProvider.of<HomeBloc>(context)
+                              .shirtViewAllClicked();
+                        }
+
                     ),
                   ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: 16.0, right: 16.0, top: 20),
+                    child:
+                    HomePageCircularProduct(data: state.shoe ?? []),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      height: 400,
+                      child: Card(
+                        child: MapDeliveryProduct(),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
             const Align(
                 alignment: Alignment.topCenter,
                 child: Padding(
