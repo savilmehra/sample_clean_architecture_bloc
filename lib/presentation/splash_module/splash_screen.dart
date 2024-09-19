@@ -1,6 +1,8 @@
+import 'package:neu_clone_app/presentation/home_page.dart';
 import 'package:sampleapp/bloc/splash_bloc/splash_bloc.dart';
 import 'package:sampleapp/bloc/splash_bloc/splash_states.dart';
 import 'package:sampleapp/presentation/common_widgets/texts/header_texts.dart';
+import 'package:sampleapp/presentation/home_module/home_page_screen.dart';
 import 'package:sampleapp/presentation/login_module/login_screen.dart';
 import 'package:sampleapp/routes.dart';
 import 'package:flutter/cupertino.dart';
@@ -23,24 +25,32 @@ class SplashScreen extends StatelessWidget {
         width: MediaQuery.of(context).size.width);
     return Scaffold(
       body: BlocListener<SplashBloc, SplashState>(listener: (context, state) {
-        if (state.isLoaded) {
+        if (state.isLoginSuccess) {
+          Navigator.pushAndRemoveUntil(
+              context,
+              MaterialPageRoute(
+                builder: (context) => HomePageScreen(),
+              ),
+                  (Route<dynamic> route) => false);
+        }
+       else if (state.isLoaded) {
           Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(
                 builder: (context) => LoginScreen(),
               ),
-              (Route<dynamic> route) => false);
+                  (Route<dynamic> route) => false);
         }
       },
           child: BlocBuilder<SplashBloc, SplashState>(builder: (context, state) {
-        return const SplashClipper(
-          gradientColors: [Colors.amber, Colors.purple],
-          secondGradientColors: [Colors.yellow, Colors.red],
-          child: Align(
-              alignment: Alignment.center,
-              child: AnimatedText(text: UiConstants.splashText)),
-        );
-      })),
+            return const SplashClipper(
+              gradientColors: [Colors.amber, Colors.purple],
+              secondGradientColors: [Colors.yellow, Colors.red],
+              child: Align(
+                  alignment: Alignment.center,
+                  child: AnimatedText(text: UiConstants.splashText)),
+            );
+          })),
     );
   }
 }

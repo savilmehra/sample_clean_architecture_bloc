@@ -4,12 +4,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sampleapp/data/login_data/login_model.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginBloc extends Cubit<LoginModel> {
   LoginBloc() : super(LoginModel());
 
-  login({required String email, required String password}) async {
 
+  login({required String email, required String password}) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setBool("isLoginSuccess", true);
     FirebaseAnalytics.instance.logEvent(name: 'Login Clicked');
     emit(LoginModel(userName: email, password: password, isLoading: true));
     await Future.delayed(const Duration(seconds: 2));

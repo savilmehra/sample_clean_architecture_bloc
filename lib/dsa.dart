@@ -1,8 +1,80 @@
+import 'dart:async';
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class MyWidget extends StatelessWidget {
+
+  StreamSubscription<int> myStreamSubscription = DSA().stream.listen((value) {
+    // add code here
+  });
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+
+        ElevatedButton(onPressed: (
+            myStreamSubscription.cancel
+        ), child: Text("close")),
+        Card(
+          child: Center(
+            child: StreamBuilder<int>(
+              stream: DSA().stream,
+
+              builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
+                if (snapshot.hasData) {
+                  // Display the data from the stream
+                  return Text('Number: ${snapshot.data}');
+                } else if (snapshot.hasError) {
+                  // Handle error case
+                  return Text('Error: ${snapshot.error}');
+                } else {
+                  // Handle loading or initial state
+                  return CircularProgressIndicator();
+                }
+              },
+            )
+            ,
+          ),
+        ),
+      ],
+    );
+  }
+
+
+}
+
 class DSA {
+
+
+  Stream<int> createFilteredStream() {
+    final StreamController<int> controller = StreamController<int>();
+
+    List<int> dataList = [1, 2, 3, 4, 5];
+    for (int data in dataList) {
+      if (data % 2 == 0) {
+        controller.add(data);
+      }
+    }
+
+    controller.close();
+    return controller.stream;
+  }
+  final StreamController<int> controller = StreamController<int>();
+
+  Stream<int> stream =
+      Stream<int>.periodic(const Duration(seconds: 1), (int value) {
+    return (value + 1) % 4;
+  });
+
+
+  loadTflite()
+  {}
+
+
+
   findDuplicates(List<int> list) {
     Map<int, int> mp = {};
-
-
 
     for (var item in list) {
       if (mp.containsKey(item)) {

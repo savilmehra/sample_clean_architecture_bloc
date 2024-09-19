@@ -1,0 +1,2 @@
+0 happy face
+1 sad

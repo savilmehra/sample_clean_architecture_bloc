@@ -18,7 +18,8 @@ class LoginScreen extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
   final _userNameTextEditor = TextEditingController();
   final _passwordTextEditor = TextEditingController();
-
+   Key? email;
+  Key? pass;
   LoginScreen({super.key});
 
   @override
@@ -49,50 +50,69 @@ class LoginScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         const Spacer(),
-                        const HeaderTexts(
-                          text: UiConstants.login,
-                          textColor: Colors.white,
+                        const Flexible(
+                          child: HeaderTexts(
+                            text: UiConstants.login,
+                            textColor: Colors.white,
+                          ),
                         ),
                         const Spacer(),
-                        CustomEditTextWithBorder(
-                          paddings: const EdgeInsets.all(16.0),
-                          levelText: UiConstants.userName,
-                          textEditingController: _userNameTextEditor,
-                          validateErrorText: UiConstants.validateEmail,
-                          textValidators: EmailValidator(),
+                        Flexible(
+                          child: CustomEditTextWithBorder(
+                            key: Key("email"),
+                            paddings: const EdgeInsets.all(16.0),
+                            levelText: UiConstants.userName,
+                            textEditingController: _userNameTextEditor,
+                            validateErrorText: UiConstants.validateEmail,
+                            textValidators: EmailValidator(),
+                          ),
                         ),
-                        CustomEditTextWithBorder(
-                          paddings: const EdgeInsets.all(16.0),
-                          levelText: UiConstants.passWord,
-                          isPassword: true,
-                          textEditingController: _passwordTextEditor,
-                          validateErrorText: UiConstants.validatePassword,
-                          textValidators: PasswordValidation(),
+                        Flexible(
+                          child: CustomEditTextWithBorder(
+                            paddings: const EdgeInsets.all(16.0),
+                            levelText: UiConstants.passWord,
+                            isPassword: true,
+                            textEditingController: _passwordTextEditor,
+                            validateErrorText: UiConstants.validatePassword,
+                            textValidators: PasswordValidation(),
+                          ),
                         ),
-                        CustomTextButton(
-                          paddings: const EdgeInsets.only(top: 60, bottom: 20),
-                          buttonClick: () {
-                            if (_formKey.currentState!.validate()) {
-                              BlocProvider.of<LoginBloc>(context).login(
-                                  email: _userNameTextEditor.text,
-                                  password: _passwordTextEditor.text);
-                            }
-                          },
-                          buttonText: UiConstants.login,
-                        ),
-                        CustomTextButton(
-                          paddings: const EdgeInsets.only(bottom: 60),
-                          buttonClick: () {},
-                          buttonText: UiConstants.signUp,
-                        ),
-                        const Spacer(),
-                        Padding(
-                          padding: EdgeInsets.all(UiSizeConstants.size20),
-                          child: SocialLoginButton(
-                            onCLick: () {
-                              BlocProvider.of<LoginBloc>(context)
-                                  .signInWithGoogle();
+                        Flexible(
+                          child: CustomTextButton(
+
+                            buttonClick: () {
+                              if (_formKey.currentState!.validate()) {
+                                BlocProvider.of<LoginBloc>(context).login(
+                                    email: _userNameTextEditor.text,
+                                    password: _passwordTextEditor.text);
+                              }
                             },
+                            buttonText: UiConstants.signIn,
+                          ),
+                        ),
+                        Flexible(
+                          child: CustomTextButton(
+                            paddings: const EdgeInsets.only(bottom: 60),
+                            buttonClick: () {
+                              if (_formKey.currentState!.validate()) {
+                                BlocProvider.of<LoginBloc>(context).login(
+                                    email: _userNameTextEditor.text,
+                                    password: _passwordTextEditor.text);
+                              }
+                            },
+                            buttonText: UiConstants.signUp,
+                          ),
+                        ),
+                        const Spacer(),
+                        Flexible(
+                          child: Padding(
+                            padding: EdgeInsets.all(UiSizeConstants.size20),
+                            child: SocialLoginButton(
+                              onCLick: () {
+                                BlocProvider.of<LoginBloc>(context)
+                                    .signInWithGoogle();
+                              },
+                            ),
                           ),
                         )
                       ],

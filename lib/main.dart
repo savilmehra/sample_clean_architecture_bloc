@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sampleapp/bloc/home_bloc/home_bloc.dart';
 import 'package:sampleapp/presentation/splash_module/splash_screen.dart';
 import 'package:sampleapp/utils/themes/custom_themes.dart';
-import 'package:firebase_analytics/firebase_analytics.dart';
+
 import 'bloc/app_bar_bloc/app_bar_bloc.dart';
 import 'bloc/login_bloc/login_bloc.dart';
 import 'bloc/product_bloc/product_bloc.dart';
@@ -78,7 +78,7 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           theme: state,
           darkTheme: CustomThemes.darkTheme,
-          home: const SplashScreen(),
+          home:  const SplashScreen(),
         );
       }),
     );

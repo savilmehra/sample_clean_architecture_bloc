@@ -6,25 +6,66 @@
 // tree, read text, and verify that the values of widget properties are correct.
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:sampleapp/bloc/app_bar_bloc/app_bar_bloc.dart';
+import 'package:sampleapp/bloc/home_bloc/home_bloc.dart';
+import 'package:sampleapp/bloc/login_bloc/login_bloc.dart';
+import 'package:sampleapp/bloc/product_bloc/product_bloc.dart';
+import 'package:sampleapp/bloc/size_config_bloc/size_config_bloc.dart';
+import 'package:sampleapp/bloc/splash_bloc/splash_bloc.dart';
+import 'package:sampleapp/bloc/theme_bloc/theme_bloc.dart';
 
 import 'package:sampleapp/main.dart';
+import 'package:sampleapp/presentation/login_module/login_screen.dart';
+import 'package:sampleapp/presentation/ui_constant/ui_constants.dart';
+import 'package:sampleapp/utils/themes/custom_themes.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    await tester.pumpWidget(MultiBlocProvider(
+      providers: [
+        BlocProvider<ThemeBloc>(
+          create: (BuildContext context) => ThemeBloc(),
+        ),
+        BlocProvider<SplashBloc>(
+          create: (BuildContext context) => SplashBloc(),
+        ),
+        BlocProvider<LoginBloc>(
+          create: (BuildContext context) => LoginBloc(),
+        ),
+        BlocProvider<AppBarBloc>(
+          create: (BuildContext context) => AppBarBloc(),
+        ),
+        BlocProvider<SizeConfigBloc>(
+          create: (BuildContext context) => SizeConfigBloc(),
+        ),
+        BlocProvider<HomeBloc>(
+          create: (BuildContext context) => HomeBloc(),
+        ),
+        BlocProvider<ProductBloc>(
+          create: (BuildContext context) => ProductBloc(),
+        ),
+      ],
+      child: BlocBuilder<ThemeBloc, ThemeData>(builder: (context, state) {
+        return MaterialApp(
+          theme: state,
+          darkTheme: CustomThemes.darkTheme,
+          home: LoginScreen(),
+        );
+      }),
+    ));
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    final titleFinder = find.text(UiConstants.login);
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    //Act - Find button by type
+    var fNameField = find.byKey(const Key("email"));
+    await tester.enterText(fNameField, "sav@gmail.com");
+    expect(fNameField, findsNWidgets(1));
+    expect(titleFinder, findsAny);
+
+
   });
 }
